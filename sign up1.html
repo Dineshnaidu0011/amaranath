@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <style>
+       body {
+           font-family: Arial, sans-serif;
+           background-color: #f0f0f0;
+           display: flex;
+           justify-content: center;
+           align-items: center;
+           height: 100vh;
+           margin: 0;
+       }
+
+       .container {
+           position: relative;
+           background-color: #fff;
+           padding: 55px;
+           border-radius: 25px;
+           box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+           width: 350px;
+           text-align: left;
+       }
+
+       .cancel-icon {
+           position: absolute;
+           top: 20px;
+           right: 20px;
+           font-size: 24px;
+           color: rgb(0, 0, 0);
+           cursor: pointer;
+       }
+
+       h1 {
+           margin-bottom: 20px;
+       }
+
+       p {
+           margin-bottom: 20px;
+           color: #666;
+       }
+
+       .form-group {
+           margin-bottom: 15px;
+           text-align: left;
+       }
+
+       label {
+           display: block;
+           margin-bottom: 5px;
+           color: #333;
+       }
+
+       input[type="email"],
+       input[type="password"] {
+           width: 100%;
+           padding: 10px;
+           border: 1px solid #ccc;
+           border-radius: 10px;
+       }
+
+       input[type="checkbox"] {
+           margin-right: 10px;
+       }
+
+       button {
+           width: 100%;
+           padding: 10px;
+           border: none;
+           border-radius: 10px;
+           cursor: pointer;
+           font-size: 16px;
+           margin-top: 10px;
+       }
+
+       button[type="submit"] {
+           background-color: #f84610;
+           color: #fffcfc;
+       }
+
+       button[type="button"] {
+           background-color: #f1f1f1;
+           color: #0c0a0a;
+       }
+
+       button:hover {
+           opacity: 0.9;
+       }
+
+       .flex-row {
+           display: flex;
+           justify-content: space-between;
+       }
+
+       .flex-item {
+           width: 48%;
+           margin-right: 28px; /* Added margin */
+       }
+
+       .flex-item:last-child {
+           margin-right: 0; /* Remove margin from last item */
+       }
+
+       .checkbox-group {
+           display: flex;
+           align-items: center;
+       }
+
+       .signin-button1 {
+           background: none;
+           border: none;
+           color: rgb(0, 0, 0);
+           text-decoration: underline;
+           cursor: pointer;
+       }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <span class="cancel-icon" title="Cancel">&#10006;</span>
+        <h1>Sign up</h1>
+        <p>Please fill in this form to create an account.</p>
+        <form action="/submit_signup" method="POST">
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required  placeholder="Email">
+                
+            </div>
+            <div class="form-group flex-row">
+                <div class="flex-item">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required placeholder="Your password">
+                </div>
+                <div class="flex-item">
+                    <label for="confirm-password">Confirm Password:</label>
+                    <input type="password" id="confirm-password" name="confirm_password" required placeholder="Conform password">
+                </div>
+            </div>
+            <div class="form-group checkbox-group">
+                <input type="checkbox" id="agree" name="agree" required>
+                <label for="agree">I have read and accept terms and conditions</label>
+            </div>
+            <div class="form-group">
+                <button type="submit">Sign Up</button>
+            </div>
+        </form>
+        <div class="form-group">
+            <button type="button" onclick="window.location.href='/signup_with_google'">Sign Up with Google</button>
+        </div>
+        <p>Have an account? <button1 class="signin-button1" onclick="window.location.href='/signin'"><b>Sign in</b></button1></p>
+    </div>
+</body>
+</html>
